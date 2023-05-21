@@ -88,6 +88,48 @@ local plugins = {
     end,
   },
 
+  ["EthanJWright/vs-tasks.nvim"] = {
+    requires = {
+      'nvim-lua/popup.nvim',
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim'
+    },
+    setup = function()
+      require("vstask").setup({
+        cache_json_conf = true, -- don't read the json conf every time a task is ran
+        cache_strategy = "last", -- can be "most" or "last" (most used / last used)
+        use_harpoon = true, -- use harpoon to auto cache terminals
+        telescope_keys = { -- change the telescope bindings used to launch tasks
+            vertical = '<C-v>',
+            split = '<C-p>',
+            tab = '<C-t>',
+            current = '<CR>',
+        },
+        autodetect = { -- auto load scripts
+          npm = "on"
+        },
+        terminal = 'nvterm',
+        term_opts = {
+          vertical = {
+            direction = "vertical",
+            size = "80"
+          },
+          horizontal = {
+            direction = "horizontal",
+            size = "10"
+          },
+          current = {
+            direction = "float",
+          },
+          tab = {
+            direction = 'tab',
+          }
+        }
+      })
+
+    end,
+  },
+
   -- git stuff
   ["lewis6991/gitsigns.nvim"] = {
     ft = "gitcommit",
@@ -114,6 +156,31 @@ local plugins = {
     end,
     config = function()
       require "plugins.configs.lspconfig"
+    end,
+  },
+
+  ["simrat39/rust-tools.nvim"] = {
+      after = "nvim-lspconfig",
+      config = function()
+        require('rust-tools').setup({})
+      end,
+  },
+
+  ["jose-elias-alvarez/typescript.nvim"] = {
+    after = "nvim-lspconfig",
+    config = function()
+      require("typescript").setup({
+      disable_commands = false, -- prevent the plugin from creating Vim commands
+      debug = false, -- enable debug logging for commands
+      go_to_source_definition = {
+          fallback = true, -- fall back to standard LSP definition on failure
+      },
+      server = { -- pass options to lspconfig's setup method
+          on_attach = function()
+            print("attached to TypeScript project")
+          end,
+      },
+    })
     end,
   },
 
