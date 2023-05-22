@@ -191,6 +191,8 @@ require('lualine').setup({
 		lualine_y = {},
 		lualine_z = {}
 	},
+
+  --[[
 	tabline = {
 		lualine_a = {
 			buffer,
@@ -201,6 +203,7 @@ require('lualine').setup({
 		lualine_c = {},
 		lualine_x = {
 			tabs,
+      space
 		},
 		lualine_y = {
 			space,
@@ -210,5 +213,5 @@ require('lualine').setup({
 	},
 	winbar = {},
 	inactive_winbar = {},
-
+ ]]--
 })
