@@ -294,6 +294,14 @@ M.telescope = {
   },
 }
 
+M.tasks = {
+  plugin = true,
+
+  n = {
+    ["<leader>st"] = { "<cmd> Telescope tasks specs <CR>", "show available tasks" }
+  }
+}
+
 M.nvterm = {
   plugin = true,
 

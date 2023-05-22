@@ -88,48 +88,6 @@ local plugins = {
     end,
   },
 
-  ["EthanJWright/vs-tasks.nvim"] = {
-    requires = {
-      'nvim-lua/popup.nvim',
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim'
-    },
-    setup = function()
-      require("vstask").setup({
-        cache_json_conf = true, -- don't read the json conf every time a task is ran
-        cache_strategy = "last", -- can be "most" or "last" (most used / last used)
-        use_harpoon = true, -- use harpoon to auto cache terminals
-        telescope_keys = { -- change the telescope bindings used to launch tasks
-            vertical = '<C-v>',
-            split = '<C-p>',
-            tab = '<C-t>',
-            current = '<CR>',
-        },
-        autodetect = { -- auto load scripts
-          npm = "on"
-        },
-        terminal = 'nvterm',
-        term_opts = {
-          vertical = {
-            direction = "vertical",
-            size = "80"
-          },
-          horizontal = {
-            direction = "horizontal",
-            size = "10"
-          },
-          current = {
-            direction = "float",
-          },
-          tab = {
-            direction = 'tab',
-          }
-        }
-      })
-
-    end,
-  },
-
   -- git stuff
   ["lewis6991/gitsigns.nvim"] = {
     ft = "gitcommit",
@@ -222,7 +180,7 @@ local plugins = {
 
   ["goolord/alpha-nvim"] = {
     after = "base46",
-    disable = true,
+    disable = false,
     config = function()
       require "plugins.configs.alpha"
     end,
@@ -259,6 +217,10 @@ local plugins = {
     setup = function()
       require("core.utils").load_mappings "telescope"
     end,
+  },
+
+  ["GustavoKatel/tasks.nvim"] = {
+    requires = { "nvim-lua/plenary.nvim" },
   },
 
   -- Only load whichkey after all the gui
