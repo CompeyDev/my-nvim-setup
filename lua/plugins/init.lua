@@ -54,6 +54,18 @@ local plugins = {
       require("plugins.configs.others").devicons()
     end,
   },
+  
+  ["kdheepak/tabline.nvim"] = {
+    after = "ui",
+  },
+  
+  ["nvim-lualine/lualine.nvim"] = {
+    after = "tabline.nvim",
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+    config = function()
+        require("plugins.configs.lualine")
+    end,
+  },
 
   ["lukas-reineke/indent-blankline.nvim"] = {
     opt = true,
