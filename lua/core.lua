@@ -16,6 +16,9 @@ local function set_keymap()
     nnoremap <silent> <Esc> :nohlsearch<CR>:echo<CR>
 	]])
 
+	-- Remove the `~` for blank lines by setting its color to be the same as background
+        vim.cmd("hi NonText guifg=bg")
+
 	-- for markdown file
 	vim.cmd([[
     " optimized up and down move when set wrap for markdown file
