@@ -1,4 +1,4 @@
-HOME = os.getenv("HOME")
+HOME = os.getenv "HOME"
 
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
@@ -62,7 +62,7 @@ vim.opt.swapfile = false -- do not use swap file
 -- Commands mode
 vim.opt.wildmenu = true -- on TAB, complete options for system command
 vim.opt.wildignore =
-	"deps,.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc"
+  "deps,.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc"
 
 -- Only show cursorline in the current window and in normal mode.
 -- vim.cmd([[
@@ -75,11 +75,11 @@ vim.opt.wildignore =
 --   augroup END
 -- ]])
 
-vim.cmd([[
+vim.cmd [[
     set noeb
     set t_Co=256
     filetype    plugin indent on
     exec        "nohlsearch"
     syntax      enable
     syntax      on
-]])
+]]
