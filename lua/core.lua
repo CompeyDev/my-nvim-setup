@@ -6,8 +6,6 @@ local function set_keymap()
   local map = vim.keymap.set
   local option = { noremap = true, silent = true }
 
-  vim.o.guifont = "CaskaydiaCove Nerd Font Mono:h13"
-
   map("n", keys.jump_left_window, "<C-W>h", option)
   map("n", keys.jump_down_window, "<C-W>j", option)
   map("n", keys.jump_up_window, "<C-W>k", option)
