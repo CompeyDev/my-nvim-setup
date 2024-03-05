@@ -11,6 +11,10 @@ local function set_keymap()
   map("n", keys.jump_up_window, "<C-W>k", option)
   map("n", keys.jump_right_window, "<C-W>l", option)
 
+  -- View documentation and signature details
+  map("n", "K", vim.lsp.buf.hover, option)
+  map({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, option)
+
   vim.cmd [[
     " press esc to cancel search highlight
     nnoremap <silent> <Esc> :nohlsearch<CR>:echo<CR>

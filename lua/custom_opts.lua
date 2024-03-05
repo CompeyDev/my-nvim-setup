@@ -10,10 +10,10 @@ local function strsplit(inputstr, sep)
 end
 
 return {
-  file_explorer_title = "🥷 File Explorer",
-  tab_style = "thin", -- options: thin, thick, slope, slant
+  file_explorer_title = "",
+  tab_style = "thick", -- options: thin, thick, slope, slant
   terminal_size = 0.7, -- control the float terminal only
-  window_transparency = 0,
+  window_transparency = 1,
   auto_open_outline = false, -- options: true, false
   cmdline_view = "cmdline", -- options: cmdline, cmdline_popup
   close_message_notify = false,
