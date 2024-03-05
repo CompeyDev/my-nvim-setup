@@ -1,5 +1,8 @@
 HOME = os.getenv "HOME"
 
+-- Font
+vim.o.guifont = "CaskaydiaCove Nerd Font Mono:h13"
+
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
 vim.opt.updatetime = 200
@@ -40,7 +43,7 @@ vim.opt.showcmd = true -- display command in bottom bar
 -- Search
 vim.opt.incsearch = true -- starts searching as soon as typing, without enter needed
 vim.opt.ignorecase = true -- ignore letter case when searching
-vim.opt.smartcase = true -- case insentive unless capitals used in search
+vim.opt.smartcase = true -- case insensitive unless capitals used in search
 
 vim.opt.matchtime = 2 -- delay before showing matching paren
 vim.opt.mps = vim.o.mps .. ",<:>"
