@@ -72,7 +72,7 @@ return function()
         },
 
         window = {
-            position = "left",
+            position = "right",
             width = 35,
             mapping_options = {
                 noremap = true,
